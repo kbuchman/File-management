@@ -29,8 +29,8 @@ def sort(src_path, des_path):
                 path = "/screenshots"
             elif item.endswith(".jpg"):
                 if fnmatch.fnmatch(item, "*img*") or os.path.getsize(item_path) > 1024.0:
-                    dt = datetime.fromtimestamp(os.path.getmtime(item_path))  # invalid date format dhaup
-                    date = dt.split("-")
+                    dt = str(datetime.fromtimestamp(os.path.getmtime(item_path)))
+                    date = (dt[0:4], dt[5:7], dt[8:10])
                     path = f"/photos/{date[0]}/{date[1]}/{date[2]}"
                 else:
                     path = "/images"
