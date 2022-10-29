@@ -1,9 +1,8 @@
 from PIL import Image as im
-from pytesseract import image_to_string 
-import pytesseract
+from pytesseract import image_to_string, pytesseract
 
 # path to disc files with tesseract
-pytesseract.pytesseract.tesseract_cmd = 'C:/Program Files/Tesseract-OCR/tesseract'
+pytesseract.tesseract_cmd = 'C:/Program Files/Tesseract-OCR/tesseract'
 TESSDATA_PREFIX = 'C:/Program Files/Tesseract-OCR'
 
 def get_text_from_image(file_path, language):
